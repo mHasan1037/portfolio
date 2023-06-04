@@ -1,0 +1,228 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: Poppins,sans-serif;
+}
+
+:root{
+    --green-color: rgb(111, 230, 111);
+    --black-body: black;
+    --white-color: white;
+}
+
+body{
+    background-color: var(--black-body);
+    color: var(--white-color);
+}
+
+.main-container{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+header{
+    margin-top: 20px;
+}
+
+nav{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+    "h n";
+}
+
+nav h3{
+    grid-area: h;
+    font-size: 30px;
+}
+
+nav ul{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    list-style-type: none;
+    justify-self: end;
+    grid-area: n;
+}
+
+nav ul li a{
+    color: var(--white-color);
+    font-weight: bold;
+    position: relative;
+}
+
+nav ul li a:hover{
+    color: var(--green-color);
+}
+
+nav ul li a:hover::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--green-color);
+}
+
+nav i.fa-bars{
+   grid-area: b;
+   justify-self: end;
+   display: none;
+}
+
+
+/*
+hero section starts from here........
+*/
+
+.hero-section{
+    height: 70vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero-name{
+    font-size: 40px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.hero-name span{
+    position: relative;
+    font-size: 50px; 
+}
+
+.hero-name span::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 3px;
+    background-color: var(--green-color);
+    animation: grow 10s linear infinite;
+}
+
+@keyframes grow{
+    0%{
+        width: 0;
+    }100%{
+        width: 100%;
+    }
+}
+
+.typing-text-div{
+    
+    font-size: 40px;
+}
+
+.typing-text-div .text{
+    position: relative;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.typing-text-div .text.first-text{
+    color: var(--white-color)
+}
+
+.text.sec-text{
+    color: var(--green-color);
+    margin-left: 10px;
+}
+
+.text.sec-text::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--black-body);
+    border-left: 3px solid var(--green-color);
+    animation: animate 4s steps(12) infinite;
+}
+
+@keyframes animate{
+    40%, 60%{
+        left: 100%
+    }
+    100%{
+        left: 0;
+    }
+}
+
+.hero-btn{
+    display: flex;
+    gap: 10px;
+    width: fit-content;
+    margin-top: 20px;
+    background-color: var(--black-body);
+    color: var(--white-color);
+    padding: 10px 30px;
+    border-radius: 5px;
+    border: 1px solid var(--white-color);
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.hero-btn:hover{
+    background-color: var(--green-color);
+    border-color: var(--green-color);
+}
+
+
+.hero-social-icon{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.hero-social-icon a{
+    color: var(--white-color);
+}
+
+.hero-social-icon .fa-brands{
+    font-size: 30px;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+}
+
+.hero-social-icon .fa-brands:hover{
+    background-color: var(--green-color);
+}
+
+
+@media screen and (max-width: 1200px) {
+    .main-container{
+        width: calc(100% - 10%);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .main-container{
+        width: calc(100% - 20px);
+    }
+    nav{
+        grid-template-areas: 
+        "h b"
+        "n n";
+    }
+    nav ul{
+        justify-self: stretch;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    }
+    nav i.fa-bars{
+        display: block;
+    }
+}

@@ -10,11 +10,28 @@
     --green-color: rgb(111, 230, 111);
     --black-body: black;
     --white-color: white;
+    --headline-font-size-one: 50px;
 }
 
 body{
     background-color: var(--black-body);
     color: var(--white-color);
+}
+
+.headline{
+    position: relative;
+    font-size: var(--headline-font-size-one);
+    display: inline-block;
+}
+
+.headline::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    height: 5px;
+    background-color: var(--green-color);
 }
 
 .main-container{
@@ -48,6 +65,47 @@ nav ul{
     grid-area: n;
 }
 
+.showNav{
+    height: auto;
+    gap: 0;
+    overflow: auto; 
+    position: absolute;
+    top: 50px;
+    width: calc(100% - 20px); 
+    background-color: var(--black-body);
+    border-bottom: 1px solid rgb(26, 25, 25);
+    animation: growHigh 0.2s linear;
+}
+
+@keyframes growHigh{
+    0%{
+        transform: scale(0, 0);
+    }100%{
+        transform: translateY(1, 1);
+    }
+}
+
+.showNav li{
+    width: 100%;
+    text-align: center;
+}
+
+.showNav li a{
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.showNav li a:hover{
+    background-color: var(--green-color);
+    color: white;
+}
+
+.showNav li a:hover::before{
+    height: 0;
+    width: 0;
+}
+
 nav ul li a{
     color: var(--white-color);
     font-weight: bold;
@@ -68,10 +126,11 @@ nav ul li a:hover::before{
     background-color: var(--green-color);
 }
 
-nav i.fa-bars{
+#burger-menu{
    grid-area: b;
    justify-self: end;
    display: none;
+   cursor: pointer;
 }
 
 
@@ -80,7 +139,7 @@ hero section starts from here........
 */
 
 .hero-section{
-    height: 70vh;
+    height: 90vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -115,8 +174,7 @@ hero section starts from here........
     }
 }
 
-.typing-text-div{
-    
+.typing-text-div{  
     font-size: 40px;
 }
 
@@ -201,6 +259,114 @@ hero section starts from here........
 }
 
 
+
+/*
+     about section starts from here......
+*/
+.about-section{
+    display: flex;
+    align-items: center;
+    min-height: 50vh;
+}
+
+.about-content{
+    flex: 1;
+}
+
+
+.about-content p{
+    margin-top: 20px;
+    width: 80%;
+    line-height: 22px;
+}
+
+.about-img-sec{
+    flex: 1;
+    display: grid;
+    place-items: center;
+}
+
+.about-img-box{
+   width: 300px;
+   height: 300px;
+   display: grid;
+   place-items: center;
+   border-radius: 50%;
+   position: relative;
+   overflow: hidden;
+   z-index: 5;
+}
+
+.about-img-box::before{
+    content: '';
+    position: absolute;
+    width: 80px;
+    inset: -30px 140px;
+    background-color: aliceblue;
+    animation: aboutImg 4s linear infinite;
+    background: linear-gradient(315deg, #00ccff, var(--green-color));
+}
+
+@keyframes aboutImg{
+    0%{
+        transform: rotate(0deg);
+    }0%{
+        transform: rotate(360deg);
+    }
+}
+
+.about-img-sec img{
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    object-fit: cover;
+    z-index: 10;
+    background-color: var(--black-body);
+}
+
+
+/*
+  Skills section starts from heree.....
+*/
+
+.skill-section{
+    margin-top: 200px;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.skill-container{
+    width: 40%;
+    margin:  0 auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.skill-set{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 40%;
+}
+
+.skill-img-box{
+    width: 50px;
+    height: 45px;
+    overflow: visible;
+}
+.skill-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
 @media screen and (max-width: 1200px) {
     .main-container{
         width: calc(100% - 10%);
@@ -209,7 +375,7 @@ hero section starts from here........
 
 @media screen and (max-width: 768px) {
     .main-container{
-        width: calc(100% - 20px);
+        width: calc(100% - 50px);
     }
     nav{
         grid-template-areas: 
@@ -221,8 +387,66 @@ hero section starts from here........
         flex-direction: column;
         align-items: center;
         margin-top: 20px;
+        height: 0;
+        overflow: hidden;
+        z-index: 5;
     }
-    nav i.fa-bars{
+
+    #burger-menu{
         display: block;
+    }
+
+    #burger-menu .fa-solid.fa-bars{
+        display: block;
+    }
+
+    #burger-menu .fa-solid.fa-xmark{
+        display: none;
+    }
+}
+
+
+
+@media screen and (max-width: 576px){
+    .hero-section{
+        height: 50vh;
+        flex-direction: column;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .hero-name{
+        font-size: 25px;
+        margin: 6px 0;
+    }
+
+    .hero-name span{
+        font-size: 30px; 
+    }
+
+    .typing-text-div .text{
+        font-size: 20px;
+        font-weight: 400;
+    }
+
+    .text.sec-text{
+        margin-left: 5px;
+    }
+
+    .hero-btn{
+        gap: 5px;
+        margin-top: 20px;
+        padding: 8px 20px;
+    }
+
+    .hero-social-icon{
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .hero-social-icon .fa-brands{
+        font-size: 20px;
+        width: 30px;
+        height: 30px;
     }
 }

@@ -14,11 +14,11 @@
             <nav>
                 <h3>M. Hasan</h3>
                 <ul id="nav-items">
-                    <li><a href="">Home</a></li>
-                    <li><a href="">About</a></li>
-                    <li><a href="">Resume</a></li>
-                    <li><a href="">Projects</a></li>
-                    <li><a href="">Contact</a></li>
+                    <li><a href="#home-sec">Home</a></li>
+                    <li><a href="#about-sec">About</a></li>
+                    <li><a href="#skills-sec">Skills</a></li>
+                    <li><a href="#project-sec">Projects</a></li>
+                    <li><a href="#contact-sec">Contact</a></li>
                 </ul>
                 <div  id="burger-menu">
                     <i class="fa-solid fa-bars"></i>
@@ -31,7 +31,7 @@
         <!--
            hero section starts from here........
         -->
-        <section class="hero-section">
+        <section class="hero-section" id="home-sec">
                <div>
                     <h3>Hi,</h3>
                     <h2 class="hero-name">I'm <span>Mahmudul Hasan</span></h2>
@@ -55,7 +55,7 @@
             about section starts from here......
         -->
 
-        <section class="about-section">
+        <section class="about-section" id="about-sec">
             <div class="about-content">
                 <h1 class="headline">About me</h1>
                 <p>
@@ -73,7 +73,7 @@
             Skills section starts from heree.....
         -->
 
-        <section class="skill-section">
+        <section class="skill-section" id="skills-sec">
             <h1 class="headline">Skills</h1>
 
             <div class="skill-container">
@@ -127,8 +127,74 @@
                 </div>
             </div>
         </section>
+
+        <!--
+            portfolio project section....
+        -->
+        <section class="portfolio-section" id="project-sec">
+            <h1 class="headline">Portfolio</h1>
+
+            <div class="portfolio-container">
+                  <!--data is comming here from portfolio.js-->
+            </div>
+
+            <a href="https://github.com/mHasan1037" target="_blank" class="hero-btn" style="margin-top: 50px;">
+                Visit Github
+                <i class="fa-brands fa-github"></i>
+            </a>
+        </section>
+
+        <section class="modal-container">
+            <!--data is comming here dynamically from portfolio.js-->
+        </section>
+
+
+        <!--
+            contact me section
+        -->
+        <section class="contact-section" id="contact-sec">
+            <h1 class="headline">Contact Me</h1>
+
+            <div class="contact-container">
+                <div class="contact-details">
+                    <p>
+                        If you want to say "Hello" to me, <br>
+                        please fill out the form and <br>I will reply you shortly 
+                    </p>
+        
+                    <h2 class="address"><i>Dhaka, Bangladesh</i></h2>
+                    <h2>+880 130 260 9245</h2>
+                    <p class="contact-email">mhasan.bd.95@gmail.com</p>
+                    <div class="contact-social">
+                        <a href="https://github.com/mHasan1037" target="_blank"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/mhasan95/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://twitter.com/Hasan_1037" target="_blank"><i class="fa-brands fa-square-twitter"></i></a>
+                    </div>
+                </div>
+                <form>
+                    <div class="form-inputs">
+                        <input type="text" id="name" placeholder="Name" />
+                        <input type="email" id="email" placeholder="Email" />
+                    </div>
+                    <textarea placeholder="Message"></textarea>
+                    <button>
+                        Send Message
+                        <i class="fa-regular fa-envelope"></i>
+                    </button>
+                </form>
+            </div>
+        </section>
+
     </div>
 
-    <script src="portfolio.js"></script>
+    <section class="copy-right">
+
+        <script>
+            const copyRight = document.querySelector('.copy-right')
+            copyRight.innerHTML = `@ ${new Date().getFullYear()} Mahmudul Hasan. All Rights Reserved.`
+        </script>
+    </section>
+
+    <script type="module" src="portfolio.js"></script>
 </body>
 </html>

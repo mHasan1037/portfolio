@@ -11,6 +11,11 @@
     --black-body: black;
     --white-color: white;
     --headline-font-size-one: 50px;
+    --para-color: rgb(116, 114, 114);
+}
+
+html{
+    scroll-behavior: smooth;
 }
 
 body{
@@ -214,7 +219,8 @@ hero section starts from here........
     }
 }
 
-.hero-btn{
+.hero-btn,
+form button{
     display: flex;
     gap: 10px;
     width: fit-content;
@@ -228,7 +234,8 @@ hero section starts from here........
     font-weight: bold;
 }
 
-.hero-btn:hover{
+.hero-btn:hover,
+form button:hover{
     background-color: var(--green-color);
     border-color: var(--green-color);
 }
@@ -240,11 +247,13 @@ hero section starts from here........
     gap: 20px;
 }
 
-.hero-social-icon a{
+.hero-social-icon a,
+.contact-social a{
     color: var(--white-color);
 }
 
-.hero-social-icon .fa-brands{
+.hero-social-icon .fa-brands,
+.contact-social .fa-brands{
     font-size: 30px;
     cursor: pointer;
     width: 50px;
@@ -254,10 +263,10 @@ hero section starts from here........
     place-items: center;
 }
 
-.hero-social-icon .fa-brands:hover{
+.hero-social-icon .fa-brands:hover,
+.contact-social .fa-brands:hover{
     background-color: var(--green-color);
 }
-
 
 
 /*
@@ -365,6 +374,243 @@ hero section starts from here........
     height: 100%;
     object-fit: cover;
 }
+
+/*
+  portfolio-section.....
+*/
+
+.portfolio-section{
+    margin-top: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.portfolio-container{
+    margin-top: 50px;
+    max-width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.portfolio-box{
+    width: 300px;
+    height: 200px;
+    position: relative;
+}
+
+.portImg{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.portOverlay{
+    position: absolute;
+    width: 95%;
+    height: 95%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.portOverlay .fa-eye{
+    display: none;
+}
+
+.portOverlay:hover .fa-eye{
+    display: block;
+}
+
+.portfolio-box:hover .portOverlay{
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.port-textBox{
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.port-textBox p{
+    font-size: 12px;
+}
+
+
+/*
+ modal of portfolio
+*/
+
+.modal-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 200;
+}
+
+.modal-visible{
+    display: grid;
+    place-items: center;
+}
+
+.modal-box{
+    background-color: var(--black-body);
+    width: 40vw;
+    min-width: 400px;
+    height: 70vh;
+    border: 1px solid rgb(94, 92, 92);
+    border-radius: 5px;
+    padding: 20px 36px;
+    position: relative;
+}
+
+.close-modal{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    color: red;
+    border: 2px solid red;
+    cursor: pointer;
+}
+
+.close-modal:hover {
+    background-color: rgba(255, 73, 73, 0.5);
+}
+
+.modal-box h1{
+    margin-top: 5px;
+}
+
+.modal-box p{
+    margin-top: 5px;
+    color:var(--para-color);
+}
+
+.modal-options{
+    margin-top: 35px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.modal-options > *{
+    width: calc(50% - 20px);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.modal-options > * p,
+.modal-options > * a
+{
+    color: var(--green-color);
+}
+
+.modal-options > * a:hover{
+    border-bottom: 1px solid var(--green-color);
+}
+
+.modal-box img{
+    margin-top: 25px;
+    width: 100%;
+    max-height: 300px;
+}
+
+/*
+ contact me section...
+*/
+.contact-section{
+   margin-top: 250px;
+}
+
+.contact-container{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+.contact-container > *{
+    flex: 1;
+}
+
+.contact-details p:nth-child(1){
+    color: var(--para-color);
+}
+
+.address{
+    margin: 55px 0 15px;
+}
+
+
+.contact-email{
+    color: var(--green-color);
+    margin-top: 5px;
+}
+
+.contact-social{
+    margin-top: 30px;
+    display: flex;
+}
+
+form{
+    width: 100%;
+}
+
+.form-inputs input,
+textarea{
+    background-color: transparent;
+    border: none;
+    color: rgb(228, 228, 228);
+    border-bottom: 1px solid rgb(112, 111, 111);
+    padding: 5px;
+    font-size: 15px;
+    margin-bottom: 25px;
+}
+
+.form-inputs input{
+    width: 48%;
+}
+
+textarea{
+    display: block;
+    width: 96%;
+    min-height: 200px;
+}
+
+.form-inputs input:focus,
+textarea:focus{
+   outline: none;
+   border-bottom: 1px solid var(--green-color);
+}
+
+.copy-right{
+    margin-top: 200px;
+    border-top: 1px solid var(--white-color);
+    padding: 15px 0;
+    text-align: center;
+}
+
 
 
 @media screen and (max-width: 1200px) {

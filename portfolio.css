@@ -363,15 +363,9 @@ form button:hover{
     gap: 20px;
     width: 40%;
 }
-
-.skill-img-box{
+.skill-img{
     width: 50px;
     height: 45px;
-    overflow: visible;
-}
-.skill-img{
-    width: 100%;
-    height: 100%;
     object-fit: cover;
 }
 
@@ -474,7 +468,7 @@ form button:hover{
     background-color: var(--black-body);
     width: 40vw;
     min-width: 400px;
-    height: 70vh;
+    max-height: 70vh;
     border: 1px solid rgb(94, 92, 92);
     border-radius: 5px;
     padding: 20px 36px;
@@ -535,7 +529,7 @@ form button:hover{
 .modal-box img{
     margin-top: 25px;
     width: 100%;
-    max-height: 300px;
+    max-height: 300px;  
 }
 
 /*
@@ -617,6 +611,23 @@ textarea:focus{
     .main-container{
         width: calc(100% - 10%);
     }
+
+
+        /*
+    portfolio-section.....
+    */
+    .portfolio-container{
+        max-width: 95%;
+        justify-content: center;
+    }
+
+
+    /*
+    modal of portfolio
+    */
+    .modal-box{
+        max-height: 60vh;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -649,11 +660,70 @@ textarea:focus{
     #burger-menu .fa-solid.fa-xmark{
         display: none;
     }
+
+
+        /*
+    Skills section starts from heree.....
+    */
+    .skill-container{
+        width: 80%;
+        margin-top: 30px;
+    }
+
+
+    /*
+    contact me section...
+    */
+    .contact-section{
+        margin-top: 200px;
+    }
+    
+    .contact-container{
+        align-items: center;
+        flex-direction: column;
+        gap: 70px;
+    }
+
+    .contact-section .headline{
+        width: 100%;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .contact-section .headline::before{
+        left: 50%;
+        transform: translateX(-50%);
+        width: 20%;
+    }
+    
+    .form-inputs input{
+        width: 96%;
+    }
+    
+    textarea{
+        display: block;
+        width: 96%;
+        min-height: 200px;
+    }
+    
+    .copy-right{
+        font-size: 12px;
+    }
+ 
 }
 
 
 
 @media screen and (max-width: 576px){
+    .headline{
+        font-size: 30px;
+    }
+    .headline::before{
+        bottom: -3px;
+        height: 3px;
+    }
+
+
     .hero-section{
         height: 50vh;
         flex-direction: column;
@@ -695,4 +765,103 @@ textarea:focus{
         width: 30px;
         height: 30px;
     }
+
+
+    /*
+     about section starts from here......
+*/
+    .about-section{
+        margin-top: 100px;
+        flex-direction: column-reverse;
+        gap: 50px;
+        align-items: center;
+        min-height: 50vh;
+    }
+    .about-content p{
+        margin-top: 20px;
+        width: 90%;
+        line-height: 22px;
+    }
+
+    .about-img-sec{
+        flex: 1;
+        display: grid;
+        place-items: center;
+    }
+
+    .about-img-box{
+    width: 200px;
+    height: 200px;
+    }
+
+    .about-img-box::before{
+        width: 60px;
+        inset: -50px 100px;
+    }
+
+    
+        /*
+    Skills section starts from heree.....
+    */
+
+    .skill-container{
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .skill-set{
+        width: 100%;
+    }
+
+
+    /*
+    modal of portfolio
+    */
+
+    .modal-box{
+        width: 90vw;
+        min-width: 280px;
+    }
+
+    .close-modal{
+        right: 10px;
+        top: 10px;
+        width: 20px;
+        height: 20px;
+        font-size: 12px;
+    }
+
+    .modal-box h1{
+        font-size: 20px;
+    }
+
+    .modal-box p{
+        font-size: 12px;
+    }
+
+    .modal-options{
+        gap: 10px;
+    }
+
+    .modal-options > *{
+        width: calc(50% - 10px);
+        gap: 5px;
+    }
+
+    i{
+        font-size: 12px;
+    }
+
+    .modal-options > * p,
+    .modal-options > * a
+    {
+        font-size: 12px;
+    }
+
+    .modal-box img{
+        margin-top: 15px;
+    }
 }
+

@@ -22,6 +22,37 @@ menuBtn.addEventListener('click', ()=>{
 
 })
 
+
+//fixing the nav bar...
+
+const navLinks = document.querySelectorAll('.navLink')
+
+window.addEventListener('resize', navHideResponsive)
+
+function navHideResponsive(){
+    if(window.innerWidth < 768){
+        navLinks.forEach((link, idx)=>{
+            link.addEventListener('click', ()=>{
+                navItems.classList.toggle('showNav')
+
+                menuOpen = !menuOpen;
+
+                if(menuOpen){
+                    burgerIcon.style.display = 'none';
+                    navCloseIcon.style.display = 'block';
+                    } else {
+                        burgerIcon.style.display = 'block';
+                        navCloseIcon.style.display = 'none';
+                    }
+            })
+        })
+    }
+}
+
+navHideResponsive()
+
+
+
 // typewritter effect text change
 const text = document.querySelector('.sec-text');
 
@@ -125,9 +156,6 @@ function getModal(idIs){
     closeModal.addEventListener('click', ()=>{
         modalContainer.classList.remove('modal-visible')
     })
-
-    console.log(id)
-    console.log(res)
 }
 
 

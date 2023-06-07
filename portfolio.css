@@ -45,7 +45,10 @@ body{
 }
 
 header{
-    margin-top: 20px;
+    position: sticky;
+    top: 0;
+    background-color: var(--black-body);
+    z-index: 1000;
 }
 
 nav{
@@ -54,6 +57,7 @@ nav{
     grid-template-rows: auto auto;
     grid-template-areas: 
     "h n";
+    padding-top: 20px;
 }
 
 nav h3{
@@ -643,7 +647,7 @@ textarea:focus{
         justify-self: stretch;
         flex-direction: column;
         align-items: center;
-        margin-top: 20px;
+        padding-top: 20px;
         height: 0;
         overflow: hidden;
         z-index: 5;

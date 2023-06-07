@@ -152,6 +152,7 @@ hero section starts from here........
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-top: 50px;
 }
 
 .hero-name{
@@ -280,6 +281,7 @@ form button:hover{
     display: flex;
     align-items: center;
     min-height: 50vh;
+    padding-top: 50px;
 }
 
 .about-content{
@@ -350,6 +352,7 @@ form button:hover{
     justify-content: center;
     flex-direction: column;
     gap: 30px;
+    padding-top: 60px;
 }
 
 .skill-container{
@@ -383,6 +386,7 @@ form button:hover{
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    padding-top: 60px;
 }
 
 .portfolio-container{

@@ -134,7 +134,7 @@ function getModal(idIs){
                     </div>
                     <div>
                         <i class="fa-solid fa-link"></i>
-                        <a href=${webLink} target="_blank">Source code</a>
+                        <a href=${codeLink} target="_blank">Source code</a>
                     </div>
                     <div>
                         <i class="fa-brands fa-codepen"></i>
@@ -142,7 +142,7 @@ function getModal(idIs){
                     </div>
                     <div>
                         <i class="fa-solid fa-tv"></i>
-                        <a href=${codeLink}>Live Preview</a>
+                        <a href=${webLink} target="_blank">Live Preview</a>
                     </div>
                 </div>
 

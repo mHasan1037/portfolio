@@ -1,92 +1,87 @@
-import { portfolioData } from './portData.js';
+import { portfolioData } from "./portData.js";
 
 //buger click on the nav
-const menuBtn = document.getElementById('burger-menu')
-const navItems = document.getElementById('nav-items');
-const burgerIcon = document.querySelector('.fa-solid.fa-bars')
-const navCloseIcon = document.querySelector('.fa-solid.fa-xmark')
+const menuBtn = document.getElementById("burger-menu");
+const navItems = document.getElementById("nav-items");
+const burgerIcon = document.querySelector(".fa-solid.fa-bars");
+const navCloseIcon = document.querySelector(".fa-solid.fa-xmark");
 
 let menuOpen = false;
 
-menuBtn.addEventListener('click', ()=>{
-   navItems.classList.toggle('showNav')
-   menuOpen = !menuOpen;
+menuBtn.addEventListener("click", () => {
+  navItems.classList.toggle("showNav");
+  menuOpen = !menuOpen;
 
-   if(menuOpen){
-    burgerIcon.style.display = 'none';
-    navCloseIcon.style.display = 'block';
-    } else {
-        burgerIcon.style.display = 'block';
-        navCloseIcon.style.display = 'none';
-    }
-
-})
-
+  if (menuOpen) {
+    burgerIcon.style.display = "none";
+    navCloseIcon.style.display = "block";
+  } else {
+    burgerIcon.style.display = "block";
+    navCloseIcon.style.display = "none";
+  }
+});
 
 //fixing the nav bar...
 
-const navLinks = document.querySelectorAll('.navLink')
+const navLinks = document.querySelectorAll(".navLink");
 
-window.addEventListener('resize', navHideResponsive)
+window.addEventListener("resize", navHideResponsive);
 
-function navHideResponsive(){
-    if(window.innerWidth < 768){
-        navLinks.forEach((link, idx)=>{
-            link.addEventListener('click', ()=>{
-                navItems.classList.toggle('showNav')
+function navHideResponsive() {
+  if (window.innerWidth < 768) {
+    navLinks.forEach((link, idx) => {
+      link.addEventListener("click", () => {
+        navItems.classList.toggle("showNav");
 
-                menuOpen = !menuOpen;
+        menuOpen = !menuOpen;
 
-                if(menuOpen){
-                    burgerIcon.style.display = 'none';
-                    navCloseIcon.style.display = 'block';
-                    } else {
-                        burgerIcon.style.display = 'block';
-                        navCloseIcon.style.display = 'none';
-                    }
-            })
-        })
-    }
+        if (menuOpen) {
+          burgerIcon.style.display = "none";
+          navCloseIcon.style.display = "block";
+        } else {
+          burgerIcon.style.display = "block";
+          navCloseIcon.style.display = "none";
+        }
+      });
+    });
+  }
 }
 
-navHideResponsive()
-
-
+navHideResponsive();
 
 // typewritter effect text change
-const text = document.querySelector('.sec-text');
+const text = document.querySelector(".sec-text");
 
-const textLoad = () =>{
-    setTimeout(()=>{
-        text.textContent = 'Full Stack developer'
-    }, 0)
+const textLoad = () => {
+  setTimeout(() => {
+    text.textContent = "Full Stack developer";
+  }, 0);
 
-    setTimeout(()=>{
-        text.textContent = 'JavaScript developer'
-    }, 4000)
+  setTimeout(() => {
+    text.textContent = "JavaScript developer";
+  }, 4000);
 
-    setTimeout(()=>{
-        text.textContent = 'React developer'
-    }, 8000)
-}
+  setTimeout(() => {
+    text.textContent = "React developer";
+  }, 8000);
+};
 
-textLoad()
+textLoad();
 
-setInterval(()=>{
-    textLoad()
-}, 12000)
-
+setInterval(() => {
+  textLoad();
+}, 12000);
 
 //displaying all portfolio data in the html page
-const portContainer = document.querySelector('.portfolio-container')
+const portContainer = document.querySelector(".portfolio-container");
 
 console.log("data is", portfolioData);
 
-portfolioData.slice(0, 6).forEach((port, idx)=>{
-    const {id, name, type, webLink, codeLink, img, techs} = port
-   
-    const box = document.createElement('div')
-    box.innerHTML = `
+portfolioData.slice(0, 6).forEach((port, idx) => {
+  const { id, name, type, webLink, codeLink, img, techs } = port;
+
+  const box = document.createElement("div");
+  box.innerHTML = `
             <div class="portfolio-box" id=${codeLink}>
                     <img class="portImg" src=${img} />
                     <div class="portOverlay">
@@ -99,30 +94,29 @@ portfolioData.slice(0, 6).forEach((port, idx)=>{
                         </div>
                     </div>
             </div>
-    `
+    `;
 
-    portContainer.appendChild(box)
-})
-
+  portContainer.appendChild(box);
+});
 
 // on click of the portfolio box you will see the data in the modal
-const portIds = document.querySelectorAll('.portfolio-box')
+const portIds = document.querySelectorAll(".portfolio-box");
 
-portIds.forEach((ids, idx)=>{
-    ids.addEventListener('click', ()=>{
-        getModal(ids.id)
-    })
-})
+portIds.forEach((ids, idx) => {
+  ids.addEventListener("click", () => {
+    getModal(ids.id);
+  });
+});
 
-function getModal(idIs){
-    const res = portfolioData.filter((data) => data.codeLink === idIs)
+function getModal(idIs) {
+  const res = portfolioData.filter((data) => data.codeLink === idIs);
 
-    const {id,img, name, type, webLink, codeLink, techs} = res[0]
+  const { id, img, name, type, webLink, codeLink, techs } = res[0];
 
-    const modalContainer = document.querySelector('.modal-container')
-    modalContainer.classList.add('modal-visible')
+  const modalContainer = document.querySelector(".modal-container");
+  modalContainer.classList.add("modal-visible");
 
-    modalContainer.innerHTML = `
+  modalContainer.innerHTML = `
         <div class="modal-box">
                 <div class="close-modal">
                     <i class="fa-solid fa-xmark"></i>
@@ -130,45 +124,30 @@ function getModal(idIs){
                 <h1>${name}</h1>
                 <p>This website is made for my portfolio only.</p>
                 <div class="modal-options">
-                    <div>
-                        <i class="fa-brands fa-windows"></i>
-                        <p>Website</p>
-                    </div>
-                    <div>
-                        <i class="fa-solid fa-link"></i>
-                        <a href=${codeLink} target="_blank">Source code</a>
-                    </div>
-                    <div>
-                        <i class="fa-brands fa-codepen"></i>
-                        <p>${techs.map(tech => tech)}</p>
-                    </div>
-                    <div>
-                        <i class="fa-solid fa-tv"></i>
-                        <a href=${webLink} target="_blank">Live Preview</a>
-                    </div>
+                <div class="modal-info">
+                    <i class="fa-brands fa-windows"></i>
+                    <p>Website</p>
+                </div>
+                <div class="modal-link">
+                    <i class="fa-solid fa-link"></i>
+                    <a href=${codeLink} target="_blank">Source code</a>
+                </div>
+                <div class="modal-info">
+                    <i class="fa-brands fa-codepen"></i>
+                    <p>${techs.map((tech) => tech).join(", ")}</p>
+                </div>
+                <div class="modal-link">
+                    <i class="fa-solid fa-tv"></i>
+                    <a href=${webLink} target="_blank">Live Preview</a>
+                </div>
                 </div>
 
                 <img src=${img} />
         </div>
-    `
+    `;
 
-    
-
-    const closeModal = document.querySelector('.close-modal')
-    closeModal.addEventListener('click', ()=>{
-        modalContainer.classList.remove('modal-visible')
-    })
+  const closeModal = document.querySelector(".close-modal");
+  closeModal.addEventListener("click", () => {
+    modalContainer.classList.remove("modal-visible");
+  });
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

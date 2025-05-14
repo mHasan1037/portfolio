@@ -511,28 +511,41 @@ form button:hover{
     color:var(--para-color);
 }
 
-.modal-options{
-    margin-top: 35px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+.modal-options {
+  margin-top: 35px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
-.modal-options > *{
-    width: calc(50% - 20px);
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.modal-info {
+  width: calc(70% - 20px); /* each info block 70% */
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.modal-link {
+  width: calc(30% - 20px); /* each link block 30% */
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .modal-options > * p,
-.modal-options > * a
-{
-    color: var(--green-color);
+.modal-options > * a {
+  color: var(--green-color);
 }
 
-.modal-options > * a:hover{
-    border-bottom: 1px solid var(--green-color);
+.modal-options > * a:hover {
+  border-bottom: 1px solid var(--green-color);
+}
+
+@media screen and (max-width: 576px) {
+  .modal-info,
+  .modal-link {
+    width: 100%;
+  }
 }
 
 .modal-box img{

@@ -80,6 +80,8 @@ setInterval(()=>{
 //displaying all portfolio data in the html page
 const portContainer = document.querySelector('.portfolio-container')
 
+console.log("data is", portfolioData);
+
 portfolioData.slice(0, 6).forEach((port, idx)=>{
     const {id, name, type, webLink, codeLink, img, techs} = port
    

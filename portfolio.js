@@ -58,7 +58,7 @@ const text = document.querySelector('.sec-text');
 
 const textLoad = () =>{
     setTimeout(()=>{
-        text.textContent = 'Front end developer'
+        text.textContent = 'Full Stack developer'
     }, 0)
 
     setTimeout(()=>{

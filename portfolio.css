@@ -345,7 +345,7 @@ form button:hover{
 */
 
 .skill-section{
-    margin-top: 200px;
+    margin-top: 100px;
     min-height: 50vh;
     display: flex;
     align-items: center;
@@ -381,7 +381,7 @@ form button:hover{
 */
 
 .portfolio-section{
-    margin-top: 300px;
+    margin-top: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -544,7 +544,7 @@ form button:hover{
  contact me section...
 */
 .contact-section{
-   margin-top: 250px;
+   margin-top: 100px;
 }
 
 .contact-container{
@@ -873,3 +873,51 @@ textarea:focus{
     }
 }
 
+
+.experience-section {
+  margin-top: 100px;
+  padding: 80px 20px;
+  background-color: var(--black-body);
+  color: var(--white-color);
+}
+
+.experience-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.experience-box {
+  background-color: #1a1a1a;
+  padding: 30px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.experience-box h2 {
+  font-size: 24px;
+  color: var(--green-color);
+}
+
+.experience-box h4 {
+  color: var(--para-color);
+  margin-bottom: 15px;
+  font-weight: normal;
+}
+
+.experience-box p {
+  margin: 10px 0 20px;
+  color: var(--para-color);
+  line-height: 1.6;
+}
+
+.experience-box ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  color: var(--white-color);
+}
+
+.experience-box ul li {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}

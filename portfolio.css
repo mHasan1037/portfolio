@@ -282,6 +282,7 @@ form button:hover{
     align-items: center;
     min-height: 50vh;
     padding-top: 50px;
+    padding-bottom: 100px;
 }
 
 .about-content{
@@ -875,7 +876,6 @@ textarea:focus{
 
 
 .experience-section {
-  margin-top: 300px;
   padding: 80px 20px;
   background-color: var(--black-body);
   color: var(--white-color);

@@ -5,6 +5,7 @@ export let portfolioData = [
         name: 'Full Stack Ecommerce',
         webLink: 'https://mern-ecommerce-frontend-jg1w.onrender.com/',
         codeLink: 'https://github.com/mHasan1037/mern-ecommerce-frontend',
+        videoLink: 'https://www.youtube.com/watch?v=LNnoBmY9ezc&t=1s',
         img: './Image/ecomFull.jpeg',
         techs: ['Next JS', 'TypeScript', 'Redux', 'Express', 'MongoDB', 'Tailwind']
     },

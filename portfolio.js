@@ -111,7 +111,7 @@ portIds.forEach((ids, idx) => {
 function getModal(idIs) {
   const res = portfolioData.filter((data) => data.codeLink === idIs);
 
-  const { id, img, name, type, webLink, codeLink, techs } = res[0];
+  const { id, img, name, type, webLink, videoLink, codeLink, techs } = res[0];
 
   const modalContainer = document.querySelector(".modal-container");
   modalContainer.classList.add("modal-visible");
@@ -124,10 +124,16 @@ function getModal(idIs) {
                 <h1>${name}</h1>
                 <p>This website is made for my portfolio only.</p>
                 <div class="modal-options">
+                ${videoLink ? 
+                `<div class="modal-info">
+                    <i class="fa-brands fa-youtube"></i>
+                    <a href=${videoLink} target="_blank">Video Presentation</a>
+                </div>` 
+                : `
                 <div class="modal-info">
                     <i class="fa-brands fa-windows"></i>
                     <p>Website</p>
-                </div>
+                </div>`}
                 <div class="modal-link">
                     <i class="fa-solid fa-link"></i>
                     <a href=${codeLink} target="_blank">Source code</a>

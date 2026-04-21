@@ -1,98 +1,118 @@
-export let portfolioData = [
-    {
-        id: 1,
-        type: 'next',
-        name: 'Full Stack Ecommerce',
-        webLink: 'https://mern-ecommerce-frontend-jg1w.onrender.com',
-        codeLink: 'https://github.com/mHasan1037/mern-ecommerce-frontend',
-        img: './Image/ecomFull.jpeg',
-        techs: ['Next JS', 'TypeScript', 'Redux', 'Express', 'MongoDB', 'Tailwind']
-    },
-    {
-        id: 2,
-        type: 'react',
-        name: 'React Dashboard',
-        webLink: 'https://mhasan1037.github.io/react-dashboard/',
-        codeLink: 'https://github.com/mHasan1037/react-dashboard',
-        img: './Image/dashboard.png',
-        techs: ['React JS']
-    },
-    {
-        id: 3,
-        type: 'frontEnd',
-        name: 'Ecommerce website',
-        webLink: 'https://mhasan1037.github.io/E-commerce-2/',
-        codeLink: 'https://github.com/mHasan1037/E-commerce-2',
-        img: './Image/port1.JPG',
-        techs: ["HTML", "CSS", "JS"]
-    },
-    {
-        id: 4,
-        type: 'react',
-        name: 'Stock-app',
-        webLink: 'https://mhasan1037.github.io/stock-app/',
-        codeLink: 'https://github.com/mHasan1037/stock-app',
-        img: './Image/stock-app.JPG',
-        techs: ["React JS", "SCSS"]
-    },
-    {
-        id: 5,
-        type: 'react',
-        name: 'Ecommerce website',
-        webLink: 'https://mhasan1037.github.io/e-commerce/',
-        codeLink: 'https://github.com/mHasan1037/e-commerce',
-        img: './Image/ecommer-2.JPG',
-        techs: ["React JS"] 
-    },
-    {
-        id: 6,
-        type: 'react',
-        name: 'Expense-Tracker',
-        webLink: 'https://mhasan1037.github.io/expense-tracker/',
-        codeLink: 'https://github.com/mHasan1037/expense-tracker',
-        img: './Image/expense-tracker.JPG',
-        techs: ["React JS"]
-    },
-    {
-        id: 7,
-        type: 'frontEnd',
-        name: 'Construction website',
-        webLink: 'https://mhasan1037.github.io/Construction-Website/',
-        codeLink: 'https://github.com/mHasan1037/Construction-Website',
-        img: './Image/Construction.JPG',
-        techs: ['HTML', "CSS", 'JS']
-    },
-    {
-        id: 8,
-        type: 'frontEnd',
-        name: 'Ecommerce website',
-        webLink: 'https://mhasan1037.github.io/Complete-e-commerce/',
-        codeLink: 'https://github.com/mHasan1037/Complete-e-commerce',
-        img: './Image/port3.JPG',
-        techs: ["HTML", "CSS", "JS"]
-    },
-    {
-        id: 9,
-        type: 'others',
-        name: 'PSD-To-HTML',
-        webLink: 'https://mhasan1037.github.io/PSD-to-HTML-1/',
-        codeLink: 'https://github.com/mHasan1037/PSD-to-HTML-1',
-        img: './Image/Interior.JPG',
-        techs: ['HTML', 'CSS', 'JS']
-    },
-    {
-        id: 10,
-        type: 'others',
-        name: 'Figma-To-HTML',
-        webLink: 'https://mhasan1037.github.io/Figma-to-HTML-1/',
-        codeLink: 'https://github.com/mHasan1037/Figma-to-HTML-1',
-        img: './Image/OXPAY.JPG',
-        techs: ['HTML', 'CSS', 'JS']
-    }
-]
+export const projects = [
+  {
+    name: "Real-Time Chat & Social App ",
+    desc: "Add your project description here. Describe the problem it solves and your contribution.",
+    techs: ["Next JS", "TypeScript", "Socket.io", "React Query", "Express", "MongoDB", "Tailwind"],
+    frontend: "https://github.com/mHasan1037/chat-app-frontend",
+    backend: "https://github.com/mHasan1037/chat-app-backend",
+    liveLink: "https://chat-app-frontend-eight-woad.vercel.app/",
+    img: "./Image/chat.png",
+  },
+  {
+    name: "Full Stack Ecommerce",
+    desc: "Add your project description here. Describe the problem it solves and your contribution.",
+    techs: ["Next JS", "TypeScript", "Redux", "Express", "MongoDB", "Tailwind"],
+    frontend: "https://github.com/mHasan1037/mern-ecommerce-frontend",
+    backend: "https://github.com/mHasan1037/mern-ecommerce-backend",
+    liveLink: "https://mern-ecommerce-frontend-seven-sigma.vercel.app/",
+    video: "https://youtu.be/LNnoBmY9ezc",
+    img: "./Image/ecomFull.jpeg",
+  },
+  {
+    name: "React Dashboard",
+    desc: "Add your project description here. Highlight key features and technologies used.",
+    techs: ["React JS", "CSS"],
+    frontend: "https://github.com/mHasan1037/react-dashboard",
+    liveLink: "https://mhasan1037.github.io/react-dashboard/",
+    img: "./Image/dashboard.png",
+  },
+  {
+    name: "Ecommerce website",
+    desc: "Add your project description here. Describe the impact and what you learned.",
+    techs: ["HTML", "CSS", "JS"],
+    frontend: "https://github.com/mHasan1037/E-commerce-2",
+    liveLink: "https://mhasan1037.github.io/E-commerce-2/",
+    img: "./Image/port1.JPG",
+  },
+];
 
+export const socials = [
+  {
+    url: "https://github.com/mHasan1037",
+    icon: "fa-github",
+    title: "GitHub",
+  },
+  {
+    url: "https://www.linkedin.com/in/mhasan95/",
+    icon: "fa-linkedin",
+    title: "LinkedIn",
+  },
+  {
+    url: "https://twitter.com/Hasan_1037",
+    icon: "fa-twitter",
+    title: "Twitter",
+  },
+];
 
-
-
-
-
+export const skills = [
+  {
+    name: "Next.js",
+    icon: "https://logowik.com/content/uploads/images/nextjs7685.logowik.com.webp",
+  },
+  {
+    name: "React",
+    icon: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
+  },
+  {
+    name: "TypeScript",
+    icon: "https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg",
+  },
+  {
+    name: "JavaScript",
+    icon: "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
+  },
+  {
+    name: "Redux",
+    icon: "https://raw.githubusercontent.com/reduxjs/redux/master/logo/logo.svg",
+  },
+  {
+    name: "React Query",
+    icon: "https://api.iconify.design/logos/react-query-icon.svg",
+  },
+  {
+    name: "Node.js",
+    icon: "https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg",
+  },
+  {
+    name: "Express.js",
+    icon: "https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png",
+  },
+  {
+    name: "MongoDB",
+    icon: "https://www.cdnlogo.com/logos/m/30/mongodb-icon.svg",
+  },
+  {
+    name: "Tailwind CSS",
+    icon: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg",
+  },
+  {
+    name: "SASS",
+    icon: "https://upload.wikimedia.org/wikipedia/commons/9/96/Sass_Logo_Color.svg",
+  },
+  {
+    name: "CSS3",
+    icon: "https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg",
+  },
+  {
+    name: "Bootstrap",
+    icon: "https://upload.wikimedia.org/wikipedia/commons/b/b2/Bootstrap_logo.svg",
+  },
+  {
+    name: "HTML5",
+    icon: "https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg",
+  },
+  {
+    name: "Git & GitHub",
+    icon: "https://upload.wikimedia.org/wikipedia/commons/e/e0/Git-logo.svg",
+  },
+];

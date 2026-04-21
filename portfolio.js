@@ -1,153 +1,116 @@
-import { portfolioData } from "./portData.js";
+import { projects, skills, socials } from "./portData.js";
 
-//buger click on the nav
-const menuBtn = document.getElementById("burger-menu");
-const navItems = document.getElementById("nav-items");
-const burgerIcon = document.querySelector(".fa-solid.fa-bars");
-const navCloseIcon = document.querySelector(".fa-solid.fa-xmark");
+const projectContainer = document.getElementById("projectsGrid");
 
-let menuOpen = false;
-
-menuBtn.addEventListener("click", () => {
-  navItems.classList.toggle("showNav");
-  menuOpen = !menuOpen;
-
-  if (menuOpen) {
-    burgerIcon.style.display = "none";
-    navCloseIcon.style.display = "block";
-  } else {
-    burgerIcon.style.display = "block";
-    navCloseIcon.style.display = "none";
-  }
-});
-
-//fixing the nav bar...
-
-const navLinks = document.querySelectorAll(".navLink");
-
-window.addEventListener("resize", navHideResponsive);
-
-function navHideResponsive() {
-  if (window.innerWidth < 768) {
-    navLinks.forEach((link, idx) => {
-      link.addEventListener("click", () => {
-        navItems.classList.toggle("showNav");
-
-        menuOpen = !menuOpen;
-
-        if (menuOpen) {
-          burgerIcon.style.display = "none";
-          navCloseIcon.style.display = "block";
-        } else {
-          burgerIcon.style.display = "block";
-          navCloseIcon.style.display = "none";
-        }
-      });
-    });
-  }
-}
-
-navHideResponsive();
-
-// typewritter effect text change
-const text = document.querySelector(".sec-text");
-
-const textLoad = () => {
-  setTimeout(() => {
-    text.textContent = "Full Stack developer";
-  }, 0);
-
-  setTimeout(() => {
-    text.textContent = "JavaScript developer";
-  }, 4000);
-
-  setTimeout(() => {
-    text.textContent = "React developer";
-  }, 8000);
-};
-
-textLoad();
-
-setInterval(() => {
-  textLoad();
-}, 12000);
-
-//displaying all portfolio data in the html page
-const portContainer = document.querySelector(".portfolio-container");
-
-console.log("data is", portfolioData);
-
-portfolioData.slice(0, 6).forEach((port, idx) => {
-  const { id, name, type, webLink, codeLink, img, techs } = port;
-
-  const box = document.createElement("div");
-  box.innerHTML = `
-            <div class="portfolio-box" id=${codeLink}>
-                    <img class="portImg" src=${img} />
-                    <div class="portOverlay">
-                        <i class="fa-regular fa-eye"></i>
-                        <div class="port-textBox">
-                            <h3>${name}</h3>
-                            <p>
-                              ${techs.map((tech, idx) => tech)}
-                            </p>
-                        </div>
-                    </div>
-            </div>
-    `;
-
-  portContainer.appendChild(box);
-});
-
-// on click of the portfolio box you will see the data in the modal
-const portIds = document.querySelectorAll(".portfolio-box");
-
-portIds.forEach((ids, idx) => {
-  ids.addEventListener("click", () => {
-    getModal(ids.id);
-  });
-});
-
-function getModal(idIs) {
-  const res = portfolioData.filter((data) => data.codeLink === idIs);
-
-  const { id, img, name, type, webLink, codeLink, techs } = res[0];
-
-  const modalContainer = document.querySelector(".modal-container");
-  modalContainer.classList.add("modal-visible");
-
-  modalContainer.innerHTML = `
-        <div class="modal-box">
-                <div class="close-modal">
-                    <i class="fa-solid fa-xmark"></i>
-                </div>
-                <h1>${name}</h1>
-                <p>This website is made for my portfolio only.</p>
-                <div class="modal-options">
-                <div class="modal-info">
-                    <i class="fa-brands fa-windows"></i>
-                    <p>Website</p>
-                </div>
-                <div class="modal-link">
-                    <i class="fa-solid fa-link"></i>
-                    <a href=${codeLink} target="_blank">Source code</a>
-                </div>
-                <div class="modal-info">
-                    <i class="fa-brands fa-codepen"></i>
-                    <p>${techs.map((tech) => tech).join(", ")}</p>
-                </div>
-                <div class="modal-link">
-                    <i class="fa-solid fa-tv"></i>
-                    <a href=${webLink} target="_blank">Live Preview</a>
-                </div>
-                </div>
-
-                <img src=${img} />
+projectContainer.innerHTML = projects
+  .map((project) => {
+    return `
+      <div class="project-card">
+        <div class="project-img-ph">
+          ${project.img ? `<img src="${project.img}" alt="${project.name} screenshot" class="project-img" />` : `i class="fa-solid ${project.icon}"></i>`}
         </div>
-    `;
 
-  const closeModal = document.querySelector(".close-modal");
-  closeModal.addEventListener("click", () => {
-    modalContainer.classList.remove("modal-visible");
+        <div class="project-body">
+          <div class="project-name">${project.name}</div>
+
+          <div class="project-desc">
+            ${project.desc}
+          </div>
+
+          <div class="project-techs">
+            ${project.techs
+              .map((tech) => `<span class="tech-tag">${tech}</span>`)
+              .join("")}
+          </div>
+
+          <div class="project-links">
+            ${
+              project.frontend
+                ? `
+              <a href="${project.frontend}" target="_blank" class="proj-link">
+                <i class="fa-brands fa-github"></i> Frontend
+              </a>`
+                : ""
+            }
+
+            ${
+              project.backend
+                ? `
+              <a href="${project.backend}" target="_blank" class="proj-link">
+                <i class="fa-brands fa-github"></i> Backend
+              </a>`
+                : ""
+            }
+
+            ${
+              project.video
+                ? `
+              <a href="${project.video}" target="_blank" class="proj-link">
+                <i class="fa-brands fa-youtube"></i> Video
+              </a>`
+                : ""
+            }
+
+            ${
+              project.liveLink
+                ? `
+              <a href="${project.liveLink}" target="_blank" class="proj-link">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live
+              </a>`
+                : ""
+            }
+          </div>
+        </div>
+      </div>
+    `;
+  })
+  .join("");
+
+//all social links of mine
+const socialContainers = document.querySelectorAll(".contact-socials");
+socialContainers.forEach((container) => {
+  socials.forEach((item) => {
+    const a = document.createElement("a");
+    a.href = item.url;
+    a.target = "_blank";
+    a.title = item.title;
+
+    const icon = document.createElement("i");
+    icon.className = `fa-brands ${item.icon}`;
+
+    a.appendChild(icon);
+    container.appendChild(a);
   });
-}
+});
+
+//displaying all skills in the html page
+const skillsGrid = document.querySelector(".skills-grid");
+skills.forEach((skill) => {
+  const div = document.createElement("div");
+  div.className = "skill-chip";
+
+  div.innerHTML = `
+    <img class="skill-icon" src="${skill.icon}" onerror="this.style.display='none'" />
+    <span>${skill.name}</span>
+  `;
+
+  skillsGrid.appendChild(div);
+});
+
+// open navbar in the small screen with a barger icone
+document.addEventListener("DOMContentLoaded", () => {
+  const burger = document.getElementById("burger");
+  const navLinks = document.getElementById("navLinks");
+
+  burger.addEventListener("click", () => navLinks.classList.toggle("open"));
+
+  navLinks
+    .querySelectorAll("a")
+    .forEach((a) =>
+      a.addEventListener("click", () => navLinks.classList.remove("open")),
+    );
+});
+
+//footer text
+document.getElementById("footer-text").textContent =
+  `© ${new Date().getFullYear()} Mahmudul Hasan. All rights reserved.`;

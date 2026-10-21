@@ -5,7 +5,8 @@ export const projects = [
     techs: ["Next JS", "TypeScript", "Socket.io", "React Query", "Express", "MongoDB", "Tailwind"],
     frontend: "https://github.com/mHasan1037/chat-app-frontend",
     backend: "https://github.com/mHasan1037/chat-app-backend",
-    liveLink: "https://chat-app-frontend-fmis.onrender.com/",
+    liveLink: "https://chat-app-frontend-eight-woad.vercel.app/",
+    video: "https://www.youtube.com/watch?si=LoMv-FN_KOHHCYrd&v=0r-L55W9DIs&feature=youtu.be",
     img: "./Image/chat.png",
   },
   {
@@ -14,7 +15,7 @@ export const projects = [
     techs: ["Next JS", "TypeScript", "Redux", "Express", "MongoDB", "Tailwind"],
     frontend: "https://github.com/mHasan1037/mern-ecommerce-frontend",
     backend: "https://github.com/mHasan1037/mern-ecommerce-backend",
-    liveLink: "https://mern-ecommerce-frontend-jg1w.onrender.com/",
+    liveLink: "https://mern-ecommerce-frontend-seven-sigma.vercel.app/",
     video: "https://youtu.be/LNnoBmY9ezc",
     img: "./Image/ecomFull.jpeg",
   },

@@ -116,4 +116,16 @@ export const skills = [
     name: "Git & GitHub",
     icon: "https://upload.wikimedia.org/wikipedia/commons/e/e0/Git-logo.svg",
   },
+  {
+    name: "AWS",
+    icon: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg",
+  },
+  {
+    name: "Langchain",
+    icon: "https://upload.wikimedia.org/wikipedia/commons/e/e0/LangChain_logo.svg",
+  },
+  {
+    name: "LangGraph",
+    icon: "https://upload.wikimedia.org/wikipedia/commons/0/0e/LangGraph_Logo.png",
+  },
 ];
